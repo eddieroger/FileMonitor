@@ -32,7 +32,9 @@ public struct LinuxWatcher: WatcherProtocol {
             if fsEvent.mask & InotifyEventMask.inIsDir.rawValue > 0 { 
                 print("inIsDir is now true")
                 inIsDir = true
-             }
+             } 
+            print("inIsDir: \(inIsDir)")
+
 
 
             // File was changed
