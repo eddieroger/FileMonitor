@@ -26,7 +26,7 @@ public struct LinuxWatcher: WatcherProtocol {
             guard let url = URL(string: self.path.path + "/" + fsEvent.name) else { return }
 
             // Ignore directory changes
-            if fsEvent.mask & InotifyEventMask.inIsDir.rawValue > 0 { return }
+            // if fsEvent.mask & InotifyEventMask.inIsDir.rawValue > 0 { return }
 
             var urlEvent: FileChangeEvent? = nil
 
