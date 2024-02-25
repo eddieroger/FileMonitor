@@ -19,7 +19,7 @@ public final class MacosWatcher: WatcherProtocol {
         lastFiles = try getCurrentFiles(in: directory)
 
         fileWatcher.callback = { [self] event throws in
-            if let url = URL(string: event.path), url.isDirectory == false {
+            if let url = URL(string: event.path) {
                 let currentFiles = try getCurrentFiles(in: directory)
 
                 let removedFiles = getDifferencesInFiles(lhs: lastFiles, rhs: currentFiles)
